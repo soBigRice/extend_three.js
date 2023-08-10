@@ -76,9 +76,9 @@ class EdgesGeometry extends BufferGeometry {
 				_triangle.getNormal( _normal );
 
 				// create hashes for the edge from the vertices
-				hashes[ 0 ] = `${Math.round( a.x * precision )},${Math.round( a.y * precision )},${Math.round( a.z * precision )}`;
-				hashes[ 1 ] = `${Math.round( b.x * precision )},${Math.round( b.y * precision )},${Math.round( b.z * precision )}`;
-				hashes[ 2 ] = `${Math.round( c.x * precision )},${Math.round( c.y * precision )},${Math.round( c.z * precision )}`;
+				hashes[ 0 ] = `${ Math.round( a.x * precision ) },${ Math.round( a.y * precision ) },${ Math.round( a.z * precision ) }`;
+				hashes[ 1 ] = `${ Math.round( b.x * precision ) },${ Math.round( b.y * precision ) },${ Math.round( b.z * precision ) }`;
+				hashes[ 2 ] = `${ Math.round( c.x * precision ) },${ Math.round( c.y * precision ) },${ Math.round( c.z * precision ) }`;
 
 				// skip degenerate triangles
 				if ( hashes[ 0 ] === hashes[ 1 ] || hashes[ 1 ] === hashes[ 2 ] || hashes[ 2 ] === hashes[ 0 ] ) {
@@ -97,8 +97,8 @@ class EdgesGeometry extends BufferGeometry {
 					const v0 = _triangle[ vertKeys[ j ] ];
 					const v1 = _triangle[ vertKeys[ jNext ] ];
 
-					const hash = `${vecHash0}_${vecHash1}`;
-					const reverseHash = `${vecHash1}_${vecHash0}`;
+					const hash = `${ vecHash0 }_${ vecHash1 }`;
+					const reverseHash = `${ vecHash1 }_${ vecHash0 }`;
 
 					if ( reverseHash in edgeData && edgeData[ reverseHash ] ) {
 
